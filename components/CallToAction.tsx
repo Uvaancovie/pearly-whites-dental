@@ -6,8 +6,8 @@ const CallToAction: React.FC = () => (
       Ready to Transform Your Smile?
     </h2>
     <a
-      href="https://calendly.com/devin-chetty"
-      className="inline-block bg-dark text-white px-6 py-3 rounded-lg hover:bg-secondary hover:text-dark transition transform hover:scale-105"
+      href="https://calendly.com/way2flyagency/dental-implants"
+      className="inline-block bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary hover:text-dark transition transform hover:scale-105"
     >
       Book Your Appointment Now
     </a>
