@@ -28,14 +28,14 @@ const About = () => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/images/celeb1.jpg"
+              src="/jesse-kriel.jpg"
               alt="Celebrity 1"
               className="rounded-lg shadow-lg"
               width={300}
               height={300}
             />
             <Image
-              src="/images/celeb2.jpg"
+              src="/celeb-2.jpg"
               alt="Celebrity 2"
               className="rounded-lg shadow-lg"
               width={300}

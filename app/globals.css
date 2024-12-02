@@ -7,11 +7,11 @@
 /* Base styles */
 :root {
   --font-family-primary: "Josefin Sans", sans-serif;
-  --color-primary: #7c3aed; /* Accent purple */
-  --color-secondary: #3b82f6; /* Accent blue */
-  --color-light: #f4f4f4; /* Light grey */
-  --color-dark: #0a0a0a; /* Dark black */
-  --color-white: #ffffff;
+  --color-primary: #939699; /* Main color */
+  --color-secondary: #97B1C2; /* Secondary color */
+  --color-light: #f4f4f4; /* Light grey for background */
+  --color-dark: #0a0a0a; /* Dark black for text */
+  --color-white: #ffffff; /* White for contrast */
 }
 
 html {
@@ -35,14 +35,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5rem;
+  color: var(--color-primary);
 }
 
 h2 {
   font-size: 2rem;
+  color: var(--color-primary);
 }
 
 p {
   font-size: 1rem;
+  color: var(--color-dark);
 }
 
 /* Buttons */
@@ -55,11 +58,12 @@ p {
   border-radius: 0.5rem;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
   background-color: var(--color-secondary);
+  transform: translateY(-2px);
 }
 
 /* Utility classes */
@@ -82,3 +86,32 @@ p {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.navbar a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--color-secondary);
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.875rem;
+}

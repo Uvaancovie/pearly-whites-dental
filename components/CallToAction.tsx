@@ -1,11 +1,13 @@
 import React from "react";
 
 const CallToAction: React.FC = () => (
-  <section className="py-16 bg-gradient-to-r from-accent-purple to-accent-blue text-white text-center">
-    <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Smile?</h2>
+  <section className="py-16 bg-gradient-to-r from-primary to-secondary text-center">
+    <h2 className="text-4xl font-bold mb-6 text-dark">
+      Ready to Transform Your Smile?
+    </h2>
     <a
       href="https://calendly.com/devin-chetty"
-      className="inline-block bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition"
+      className="inline-block bg-dark text-white px-6 py-3 rounded-lg hover:bg-secondary hover:text-dark transition transform hover:scale-105"
     >
       Book Your Appointment Now
     </a>

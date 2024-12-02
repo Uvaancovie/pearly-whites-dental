@@ -14,17 +14,17 @@ const Services = () => {
             {
               title: "Zoom Whitening",
               description: "Get a brighter smile in just one session.",
-              img: "/images/service1.jpg",
+              img: "/zoom-whitening.jpg",
             },
             {
               title: "Veneers",
               description: "Transform your teeth for the perfect smile.",
-              img: "/images/service2.jpg",
+              img: "/veneers.jpg",
             },
             {
               title: "Dental Implants",
               description: "Replace missing teeth with natural-looking implants.",
-              img: "/images/service3.jpg",
+              img: "/dental-implants.jpg",
             },
           ].map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">

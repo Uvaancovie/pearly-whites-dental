@@ -18,15 +18,15 @@ const Awareness: React.FC = () => (
         {/* Celebrity Grid */}
         <div className="grid grid-cols-2 gap-4">
           <Image
-            src="/images/celeb1.jpg"
-            alt="Celebrity 1"
+            src="/header.jpg"
+            alt="Dr. Devin Chetty with Celebrity"
             className="rounded-lg shadow-lg"
             width={300}
             height={300}
           />
           <Image
-            src="/images/celeb2.jpg"
-            alt="Celebrity 2"
+            src="/jesse-kriel.jpg"
+            alt="Jesse Kriel"
             className="rounded-lg shadow-lg"
             width={300}
             height={300}
