@@ -3,6 +3,39 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "🌟 December Dazzle Smile Special! 🌟 - Pearly Whites Dental Studio",
+  description: "🎄✨ Get Holiday-Ready with a Brighter Smile! Trusted by over 100+ clients. Limited slots available before December 31st. Book now!",
+  keywords: [
+    "December Dazzle Special",
+    "Teeth Whitening Special",
+    "Pearly Whites Dental Studio",
+    "Dentist Umhlanga",
+    "Holiday Smile Makeover",
+  ],
+  openGraph: {
+    title: "🌟 December Dazzle Smile Special! 🌟",
+    description:
+      "🎄✨ Get Holiday-Ready with a Brighter Smile! Trusted by 100+ clients. Offer ends December 31st. Call now: 086 155 5111.",
+    url: "https://www.pearlywhitesdental.co.za/offers",
+    type: "website",
+    images: [
+      {
+        url: "/december-special.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "December Dazzle Smile Special",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "🌟 December Dazzle Smile Special! 🌟",
+    description: "🎄✨ Get Holiday-Ready with a Brighter Smile! Offer ends December 31st.",
+    images: ["/december-special.jpeg"],
+  },
+};
+
 const Offers = () => {
   const [daysLeft, setDaysLeft] = useState<number | string>("");
 
