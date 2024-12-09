@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
         {/* Call-to-Action Button */}
         <Link
           href="/contact"
-          className="hidden md:inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition"
+          className="hidden md:inline-block px-6 py-2 bg-primary text-black rounded-lg hover:bg-secondary transition"
         >
           Book Now
         </Link>

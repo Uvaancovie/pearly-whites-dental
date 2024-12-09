@@ -37,8 +37,8 @@ const Services: React.FC = () => (
             <div className="p-6">
               <h3 className="text-xl font-bold text-primary">{service.title}</h3>
               <p className="mt-2 text-dark">{service.description}</p>
-              <button className="mt-4 bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition">
-                Learn More
+              <button className="mt-4 bg-primary text-black px-6 py-3 rounded-lg hover:bg-secondary transition">
+                Book Now
               </button>
             </div>
           </div>
