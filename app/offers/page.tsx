@@ -1,76 +1,76 @@
 "use client";
 
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-const offers = [
-  {
-    title: "Black Friday Special",
-    description: "50% off Zoom Whitening this month only.",
-    details: "Limited slots available. Book now to secure your spot!",
-    img: "/black-friday.png",
-  },
-  {
-    title: "Family Package",
-    description: "Bring your family and save 20% on group appointments.",
-    details: "Applicable to groups of 3 or more. Offer valid until December 31st.",
-    img: "/family-package.png",
-  },
-  {
-    title: "New Patient Offer",
-    description: "Free consultation for first-time patients.",
-    details: "Offer valid until January 15th. Book now!",
-    img: "/new-patient-offer.png",
-  },
-];
 
 const Offers = () => {
+  const [daysLeft, setDaysLeft] = useState<number | string>("");
+
+  // Countdown Timer Logic for Days Remaining
+  useEffect(() => {
+    const targetDate = new Date("2023-12-31T23:59:59").getTime();
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        setDaysLeft("Ends 31st December 2024");
+      } else {
+        const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
+        setDaysLeft(days);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="bg-light-grey text-black">
-      <header className="bg-dark text-white py-16 text-center">
-        <h1 className="text-4xl font-bold">Exclusive Offers</h1>
-        <p className="mt-4 text-lg">Take advantage of our special deals today!</p>
+    <div className="bg-dark-grey text-gold">
+      {/* Header Section */}
+      <header className="bg-dark-grey text-gold py-16 text-center">
+        <h1 className="text-4xl font-bold">🌟 December Dazzle Smile Special! 🌟</h1>
+        <p className="mt-4 text-lg">🎄✨ Get Holiday-Ready with a Brighter Smile! ✨🎄</p>
       </header>
 
-      {/* Carousel Section */}
+      {/* Special Offer Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <Swiper
-            modules={[Pagination, Navigation]}
-            pagination={{ clickable: true }}
-            navigation
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="mySwiper"
-          >
-            {offers.map((offer, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-white rounded-lg shadow-lg p-6">
-                  <Image
-                    src={offer.img}
-                    alt={offer.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover rounded-t-lg mb-4"
-                  />
-                  <h2 className="text-xl font-bold mb-2">{offer.title}</h2>
-                  <p className="text-gray-700">{offer.description}</p>
-                  <p className="mt-4 text-sm text-gray-500">{offer.details}</p>
-                  <button className="btn-primary mt-4">Book Now</button>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Image Section */}
+          <div>
+            <Image
+              src="/december-special.jpeg"
+              alt="December Special"
+              width={500}
+              height={400}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+
+          {/* Content Section */}
+          <div className="text-center md:text-left">
+            <h2 className="text-3xl font-bold mb-4">
+              Shine Bright Like the Holiday Lights!
+            </h2>
+            <p className="text-lg mb-4">
+              Be the star of every selfie with a whiter, brighter smile this holiday season!
+            </p>
+            <p className="text-lg mb-4">
+              📅 Offer ends in:{" "}
+              <span className="font-bold">
+                {typeof daysLeft === "string" ? daysLeft : `${daysLeft} days`}
+              </span>
+            </p>
+            <p className="text-lg mb-4">📍 Visit us: 6 Lagoon Drive, Umhlanga Rocks, Durban, 4320</p>
+            <p className="text-lg mb-4 text-red-600">📞 Call Now: <span className="font-bold text-gold">086 155 5111</span></p>
+            <p className="text-lg font-semibold">💎 Trusted by over 100+ happy clients!</p>
+            <a
+              href="tel:0861555111"
+              className="mt-6 inline-block bg-gold text-red-400 px-6 py-3 rounded-full shadow-lg hover:bg-dark hover:text-gold transition transform hover:scale-105"
+            >
+              Call Now
+            </a>
+          </div>
         </div>
       </section>
     </div>

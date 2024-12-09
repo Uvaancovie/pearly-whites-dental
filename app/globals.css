@@ -12,6 +12,8 @@
   --color-light: #f4f4f4; /* Light grey for background */
   --color-dark: #0a0a0a; /* Dark black for text */
   --color-white: #ffffff; /* White for contrast */
+  --color-gold: #FFD700; /* Gold */
+  --color-dark-grey: #333333; /* Dark grey */
 }
 
 html {
