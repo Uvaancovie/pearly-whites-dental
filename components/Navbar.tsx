@@ -38,6 +38,9 @@ const Navbar: React.FC = () => {
           <Link href="/offers" className="hover:text-white transition">
             Offers
           </Link>
+          <Link href="/before-after" className="hover:text-white transition">
+            Before & After
+          </Link>
           <Link href="/contact" className="hover:text-white transition">
             Contact
           </Link>
