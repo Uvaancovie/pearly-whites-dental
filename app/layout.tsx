@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 // Local fonts
 import localFont from "next/font/local";
@@ -42,7 +43,12 @@ export default function RootLayout({
         {/* Navbar */}
         <Navbar />
         {/* Main Content */}
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen">
+        
+        {children}
+        <Analytics />
+        
+        </main>
         {/* Footer */}
         <Footer />
       </body>
