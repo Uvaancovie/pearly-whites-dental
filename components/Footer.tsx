@@ -24,8 +24,8 @@ const Footer: React.FC = () => {
           <p>Address: 6 Lagoon Drive, Umhlanga Rocks, Durban, 4320</p>
           <p>
             Phone:{" "}
-            <a href="tel:0861555111" className="hover:underline transition">
-              086 155 5111
+            <a href="tel:+27 65 554 1518" className="hover:underline transition">
+            +27 65 554 1518
             </a>
           </p>
         </div>
