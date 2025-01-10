@@ -53,7 +53,7 @@ const Offers: React.FC = () => {
               Shine Bright Like the Holiday Lights!
             </h2>
             <p className="text-lg mb-4">
-              Be the star of every selfie with a whiter, brighter smile this holiday season!
+              Be the star of every selfie with a whiter, brighter smile this this 2025!
             </p>
             <p className="text-lg mb-4">
               📅 Offer ends in:{" "}
@@ -63,7 +63,7 @@ const Offers: React.FC = () => {
             </p>
             <p className="text-lg mb-4">📍 Visit us: 6 Lagoon Drive, Umhlanga Rocks, Durban, 4320</p>
             <p className="text-lg mb-4">
-              📞 Call Now: <span className="font-bold text-gold">086 155 5111</span>
+              📞 Call Now: <span className="font-bold text-gold">+27 65 554 1518</span>
             </p>
             <p className="text-lg font-semibold">💎 Trusted by over 100+ happy clients!</p>
             <a
