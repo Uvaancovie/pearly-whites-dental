@@ -29,8 +29,8 @@ const Offers: React.FC = () => {
     <div className="bg-dark-grey text-gold">
       {/* Header Section */}
       <header className="bg-dark-grey text-gold py-16 text-center">
-        <h1 className="text-4xl font-bold">🌟 December Dazzle Smile Special! 🌟</h1>
-        <p className="mt-4 text-lg">🎄✨ Get Holiday-Ready with a Brighter Smile! ✨🎄</p>
+        <h1 className="text-4xl font-bold">🌟 New Offers For January Coming Soon 🌟</h1>
+        <p className="mt-4 text-lg">🎄✨ Get Work-Ready with a Brighter Smile! ✨🎄</p>
       </header>
 
       {/* Offer Section */}

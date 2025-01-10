@@ -6,7 +6,7 @@ const CallToAction: React.FC = () => (
       Ready to Transform Your Smile?
     </h2>
     <a
-      href="https://calendly.com/way2flyagency/dental-implants"
+      href="/contact"
       className="inline-block bg-secondary text-black px-6 py-3 rounded-lg hover:bg-primary hover:text-dark transition transform hover:scale-105"
     >
       Book Your Appointment Now
