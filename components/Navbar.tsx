@@ -1,113 +1,151 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { FC, SVGProps } from "react";
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const Navbar: FC = () => {
   return (
-    <header className="bg-dark text-secondary shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        {/* Logo */}
-        <div className="flex items-center space-x-3">
-          <Image
-            src="/logo.jpg"
-            alt="Devin Chetty Logo"
-            width={40}
-            height={40}
-            className="h-10 w-auto rounded-full"
-          />
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Dr. Devin Chetty
+    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon" className="lg:hidden">
+            <MenuIcon className="h-6 w-6" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
+            <MountainIcon className="h-6 w-6" />
+            <span className="sr-only">Acme Inc</span>
           </Link>
-        </div>
-
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-white transition">
-            Home
-          </Link>
-          <Link href="/services" className="hover:text-white transition">
-            Services
-          </Link>
-          <Link href="/about" className="hover:text-white transition">
-            About
-          </Link>
-          <Link href="/offers" className="hover:text-white transition">
-            Offers
-          </Link>
-          <Link href="/before-after" className="hover:text-white transition">
-            Before & After
-          </Link>
-          <Link href="/contact" className="hover:text-white transition">
-            Contact
-          </Link>
-        </nav>
-
-        {/* Call-to-Action Button */}
-        <Link
-          href="/contact"
-          className="hidden md:inline-block px-6 py-2 bg-primary text-black rounded-lg hover:bg-secondary transition"
-        >
-          Book Now
-        </Link>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden flex items-center text-secondary"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg
-            className="h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-dark text-secondary py-4 px-6">
-          <nav className="space-y-4">
-            <Link href="/" className="block hover:text-white transition">
+          <div className="grid gap-2 py-6">
+            <Link
+              href="/"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
               Home
             </Link>
-            <Link href="/services" className="block hover:text-white transition">
-              Services
-            </Link>
-            <Link href="/about" className="block hover:text-white transition">
+            <Link
+              href="/about"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
               About
             </Link>
-            <Link href="/offers" className="block hover:text-white transition">
-              Offers
+            <Link
+              href="/services"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Services
             </Link>
-            <Link href="/contact" className="block hover:text-white transition">
+            <Link
+              href="/contact"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
               Contact
             </Link>
-          </nav>
-        </div>
-      )}
+            <Link
+              href="/offers"
+              className="flex w-full items-center py-2 text-lg font-semibold"
+              prefetch={false}
+            >
+              Offers
+            </Link>
+          </div>
+        </SheetContent>
+      </Sheet>
+      <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
+        <MountainIcon className="h-6 w-6" />
+        <span className="sr-only">Pearly Whites Dental</span>
+      </Link>
+      <nav className="ml-auto hidden lg:flex gap-6">
+        <Link
+          href="/"
+          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          prefetch={false}
+        >
+          Home
+        </Link>
+        <Link
+          href="/about"
+          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          prefetch={false}
+        >
+          About
+        </Link>
+        <Link
+          href="/services"
+          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          prefetch={false}
+        >
+          Services
+        </Link>
+
+        <Link
+          href="/offers"
+          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          prefetch={false}
+        >
+          Offers
+        </Link>
+
+
+
+
+        <Link
+          href="/contact"
+          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          prefetch={false}
+        >
+          Contact
+        </Link>
+      </nav>
     </header>
+  );
+};
+
+const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+  );
+};
+
+const MountainIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+    </svg>
   );
 };
 
