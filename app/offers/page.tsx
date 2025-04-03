@@ -10,7 +10,7 @@ const offers = [
     id: "whitening-march",
     title: "April Whitening Special",
     description: "Brighten your smile with our exclusive deals!",
-    img: "/x-ray-checkup.jpg",
+    img: "/client1.jpg",
     price: "From R6000",
   },
   {

@@ -1,13 +1,18 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, Star, Instagram } from "lucide-react"
+import { OffersCarousel } from "@/components/OffersCarousel"
+import { getOffersByMonth } from "@/lib/offers"
+import type { Offer } from "@/types/offers"
 
 export default function Header() {
   const instagramRef = useRef<HTMLDivElement>(null)
+  const [aprilOffers, setAprilOffers] = useState<Offer[]>([])
+  const [loading, setLoading] = useState(true)
 
   // Load Instagram embed script
   useEffect(() => {
@@ -35,6 +40,22 @@ export default function Header() {
     }
   }, [])
 
+  // Fetch April offers
+  useEffect(() => {
+    async function loadOffers() {
+      try {
+        const offers = await getOffersByMonth("April")
+        setAprilOffers(offers)
+      } catch (error) {
+        console.error("Failed to load offers:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadOffers()
+  }, [])
+
   return (
     <section className="relative min-h-[90vh] w-full overflow-hidden bg-white">
       {/* Background with overlay */}
@@ -56,11 +77,11 @@ export default function Header() {
             {/* Trust badge */}
             <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
               <Star className="mr-1 h-3.5 w-3.5 fill-primary" />
-              Trusted by over 10,000+ patients
+              Trusted by over 100+ patients
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-              Pearly Whites Dental March Special
+              Pearly Whites Dental April Special
             </h1>
 
             <p className="text-lg text-gray-700">
@@ -68,11 +89,13 @@ export default function Header() {
               you the confident smile you deserve.
             </p>
 
-            {/* Special offer */}
-            <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
-              <p className="font-medium text-primary">New Patient Special: April Consultation & X-Rays</p>
-              <p className="text-sm text-gray-600 mt-1">Limited time offer. Book your appointment today!</p>
-            </div>
+            {/* April Offers Card */}
+            {!loading && aprilOffers.length > 0 && (
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg border border-gray-100 shadow-md p-4">
+                <h3 className="font-semibold text-primary mb-3">April Special Offers</h3>
+                <OffersCarousel offers={aprilOffers} />
+              </div>
+            )}
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
