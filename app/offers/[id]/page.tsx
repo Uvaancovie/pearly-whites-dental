@@ -14,7 +14,7 @@ const offerData = {
     img: "/zoom-whitening.jpg",
     price: "R6 200",
     details: [
-      "45-minute Zoom whitening session",
+      
       "Full oral exam & professional cleaning",
       "Instant, dramatic results",
       "Safe & comfortable",
@@ -42,16 +42,16 @@ const offerData = {
     details: [
       "Comprehensive oral exam",
       "Scaling & polishing",
-      "Digital X-rays",
+      
       "Personalised oral hygiene advice",
     ],
   },
   "pensioners-day": {
     title: "Pensioners’ Day – Every Thursday",
     description:
-      "Free consultation, specialized treatment plans & denture evaluation. Medical aid rates on all treatments.",
+      "Free consultation, specialized treatment plans & denture evaluation. ",
     img: "/pensioner-day-may.jpg",
-    price: "Medical Aid rates",
+    price: "",
     details: [
       "Complimentary consultation",
       "Customised care plan",
