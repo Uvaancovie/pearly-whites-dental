@@ -2,39 +2,66 @@
 
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const offerData = {
-  "whitening-march": {
-    title: "April Whitening Special",
-    description: "Choose the best option for a brighter smile. Save on our individual session or bring a buddy and save even more!",
-    img: "/x-ray-checkup.jpg",
-    price: "R6000 / R5500 each (with buddy)",
+  "zoom-whitening": {
+    title: "Zoom Whitening",
+    description:
+      "Advanced in-chair whitening includes a full check-up & cleaning. Take-home kit optional (price on request).",
+    img: "/zoom-whitening.jpg",
+    price: "R6 200",
     details: [
-      "Individual Whitening: R6000 (down from R7500)",
-      "Buddy Whitening: R5500 each if you bring a friend",
-      "Safe & professional treatment",
-      "Instant whitening results",
-      "Includes aftercare kit",
+      "45-minute Zoom whitening session",
+      "Full oral exam & professional cleaning",
+      "Instant, dramatic results",
+      "Safe & comfortable",
+      "Includes optional take-home tray kit",
     ],
   },
-  "checkup-march": {
-    title: "April Checkup Special",
-    description: "Get a complete dental checkup package—checkup, cleaning, and X-ray—at a dramatically reduced price.",
-    img: "/march-whitening.jpg",
-    price: "R1200",
+  "kids-cleaning": {
+    title: "Kids Check-up & Cleaning",
+    description: "Gentle check-up and professional cleaning tailored for children.",
+    img: "/kids-special-may.jpg",
+    price: "R650",
     details: [
-      "Complete Checkup, Cleaning & X-Ray package",
-      "Reduced from R1800 to R1200",
-      "Comprehensive oral health evaluation",
-      "Professional dental care",
+      "Kid-friendly exam",
+      "Plaque removal & polishing",
+      "Fluoride application (if needed)",
+      "Fun, stress-free environment",
+    ],
+  },
+  "checkup-cleaning": {
+    title: "Check-up & Cleaning Special",
+    description:
+      "Complete dental check-up, full professional cleaning & X-rays at an unbeatable R1 000.",
+    img: "/checkup-cleaning-may.jpg",
+    price: "R1 000",
+    details: [
+      "Comprehensive oral exam",
+      "Scaling & polishing",
+      "Digital X-rays",
+      "Personalised oral hygiene advice",
+    ],
+  },
+  "pensioners-day": {
+    title: "Pensioners’ Day – Every Thursday",
+    description:
+      "Free consultation, specialized treatment plans & denture evaluation. Medical aid rates on all treatments.",
+    img: "/pensioner-day-may.jpg",
+    price: "Medical Aid rates",
+    details: [
+      "Complimentary consultation",
+      "Customised care plan",
+      "Denture check & fitting",
+      "Safe, senior-friendly environment",
     ],
   },
 };
 
-const OfferDetail = () => {
+export default function OfferDetail() {
   const { id } = useParams();
   const offer = offerData[id as keyof typeof offerData];
 
@@ -64,10 +91,10 @@ const OfferDetail = () => {
         <CardContent>
           <CardTitle className="text-3xl font-bold mb-4">{offer.title}</CardTitle>
           <p className="text-lg mb-4">{offer.description}</p>
-          <h3 className="text-xl font-semibold mb-2">Offer Details:</h3>
+          <h3 className="text-xl font-semibold mb-2">Details:</h3>
           <ul className="list-disc pl-5 mb-4">
-            {offer.details.map((detail, index) => (
-              <li key={index}>{detail}</li>
+            {offer.details.map((line, idx) => (
+              <li key={idx}>{line}</li>
             ))}
           </ul>
           <p className="text-2xl font-bold text-primary mb-4">{offer.price}</p>
@@ -81,6 +108,4 @@ const OfferDetail = () => {
       </Card>
     </div>
   );
-};
-
-export default OfferDetail;
+}

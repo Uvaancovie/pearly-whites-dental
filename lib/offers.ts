@@ -1,46 +1,82 @@
+// src/lib/offers.ts
 import type { Offer } from "@/types/offers";
 
-// This is a mock data function that would typically fetch from an API or database
 export async function getOffers(): Promise<Offer[]> {
-  // In a real application, you would fetch this data from your API or database
   return [
-    
+    // — May/June Check-up & Cleaning Offer —
     {
-      id: "april-whitening",
-      title: "Teeth Whitening Special",
-      description: "Professional in-office whitening treatment for a brighter smile",
-      price: "R6000",
-      originalPrice: "75000",
-      discount: "20%",
-      validUntil: "April 30, 2025",
-      image: "/client2.jpg",
+      id: "may-june-checkup",
+      title: "Check-up & Cleaning Special",
+      description: "Full check-up, professional cleaning & X-ray",
+      price: "R1 000",
+      originalPrice: "R1 800",
+      discount: "44%",
+      validUntil: "June 30, 2025",
+      image: "/checkup-cleaning-may.jpg",
+      category: "preventive",
+      isPopular: true,
+      month: "May",
+    },
+
+    // — Kids Dental Check-up & Cleaning —
+    {
+      id: "kids-check-clean",
+      title: "Kids Check-up & Cleaning",
+      description: "Gentle exam + cleaning for your little one",
+      price: "R650",
+      originalPrice: "",
+      discount: "",
+      validUntil: "June 30, 2025",
+      image: "/kids-special-may.jpg",
+      category: "family",
+      isPopular: true,
+      month: "May",
+    },
+
+    // — Pensioners’ Day Every Thursday —
+    {
+      id: "pensioners-day",
+      title: "Pensioners’ Day – Every Thursday",
+      description:
+        "Free consultation, specialized treatment plans & denture evaluation. Medical aid rates on all treatments.",
+      price: "",
+      originalPrice: "",
+      discount: "",
+      validUntil: "Ongoing",
+      image: "/pensioner-special-may.jpg",
+      category: "senior",
+      isPopular: false,
+      month: "May",
+    },
+
+    // — Zoom Advanced In-Chair Whitening —
+    {
+      id: "zoom-advanced-whitening",
+      title: "Zoom Advanced In-Chair Whitening",
+      description: "Includes full check-up & cleaning",
+      price: "R6 200",
+      originalPrice: "",
+      discount: "",
+      validUntil: "May 31, 2025",
+      image: "/zoom-whitening.jpg",
       category: "cosmetic",
       isPopular: false,
-      month: "April",
+      month: "May",
     },
-    {
-      id: "april-xray",
-      title: "Comprehensive X-Ray Package",
-      description: "Full mouth X-rays with detailed dental assessment",
-      price: "R1200",
-      originalPrice: "R1800",
-      discount: "33%",
-      validUntil: "April 30, 2025",
-      image: "/client3.jpg",
-      category: "diagnostic",
-      isPopular: false,
-      month: "April",
-    },
-  ]
+  ];
 }
 
 export async function getOffersByMonth(month: string): Promise<Offer[]> {
-  const allOffers = await getOffers()
-  return allOffers.filter((offer) => offer.month?.toLowerCase() === month.toLowerCase())
+  const all = await getOffers();
+  return all.filter((o) => o.month?.toLowerCase() === month.toLowerCase());
 }
 
 export async function getPopularOffers(limit = 3): Promise<Offer[]> {
-  const allOffers = await getOffers()
-  return allOffers.filter((offer) => offer.isPopular).slice(0, limit)
+  const all = await getOffers();
+  return all.filter((o) => o.isPopular).slice(0, limit);
 }
 
+export async function getOfferById(id: string): Promise<Offer | undefined> {
+  const all = await getOffers();
+  return all.find((o) => o.id === id);
+}

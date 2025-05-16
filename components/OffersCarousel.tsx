@@ -29,7 +29,7 @@ export function OffersCarousel({ offers, title }: OffersCarouselProps) {
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [currentIndex])
+  }, [nextSlide])
 
   if (!offers.length) return null
 

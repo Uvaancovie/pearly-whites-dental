@@ -1,10 +1,10 @@
 import React from "react";
 
 export const metadata = {
-  title: "🌟 March Special 🌟",
+  title: "🌟 May Special 🌟",
   description: "🎄✨ Get Holiday-Ready with a Brighter Smile! Offer ends December 31st!",
   openGraph: {
-    title: "March Special Offers",
+    title: "May Special Offers",
     description: "Trusted by 100+ clients. Offer ends December 31st!",
     images: [
       {
