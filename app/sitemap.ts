@@ -38,8 +38,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/before-after`,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/contact`,

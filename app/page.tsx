@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Awareness from "../components/Awareness";
+import BeforeAfterSection from "../components/BeforeAfterSection";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
@@ -27,17 +28,22 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <div>
-      {/* Awareness */}
+      {/* Hero Section */}
       <Header />
 
-      {/* Interest */}
+      {/* About Dr. Chetty */}
       <Awareness />
 
-      {/* Desire */}
+      {/* Before & After Transformations */}
+      <BeforeAfterSection />
+
+      {/* Services */}
       <Services />
+      
+      {/* Testimonials */}
       <Testimonials />
 
-      {/* Action */}
+      {/* Call to Action */}
       <CallToAction />
     </div>
   );
