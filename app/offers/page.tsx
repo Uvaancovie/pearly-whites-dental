@@ -7,6 +7,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const offers = [
   {
+    id: "school-holiday-special-1",
+    title: "School Holiday Special",
+    description: "Full check-up, cleaning and X-rays for the whole family. Kids - R650, Parents - R850. Cash Only.",
+    img: "/school-holiday.jpeg",
+    price: "Kids: R650",
+    contact: "065 554 1518",
+    category: "Holiday Special"
+  },
+  {
+    id: "school-holiday-special-2", 
+    title: "School Holiday Family Deal",
+    description: "Kids - Full check up and cleaning. Parents - R850. Perfect for school holidays!",
+    img: "/school-holiday-2.jpeg",
+    price: "Kids: R650",
+    contact: "0861 555 111",
+    category: "Holiday Special"
+  },
+  {
     id: "zoom-whitening",
     title: "Zoom Whitening",
     description:
@@ -42,7 +60,7 @@ export default function OffersPage() {
   return (
     <div className="container mx-auto py-16 px-4">
       <h1 className="text-4xl font-bold text-center mb-10">
-        May & June Special Offers
+        🎉 School Holiday & Special Offers
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {offers.map((offer) => (

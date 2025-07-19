@@ -2,6 +2,7 @@
 
 import type React from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -56,7 +57,9 @@ const Awareness: React.FC = () => {
               </div>
             </div>
 
-            <Button className="mt-4 bg-black hover:bg-gray-800">Book a Consultation</Button>
+            <Link href="/contact">
+              <Button className="mt-4 bg-black hover:bg-gray-800">Book a Consultation</Button>
+            </Link>
           </motion.div>
 
           {/* Right column - Celebrity Grid */}
@@ -73,7 +76,7 @@ const Awareness: React.FC = () => {
                 <div className="absolute inset-0 bg-black rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <Image
                   src="/header.jpg"
-                  alt="Dr. Devin Chetty with Celebrity"
+                  alt="Dr. Devin Chetty celebrity dentist consulting with patient in modern dental office"
                   className="rounded-lg shadow-lg transform transition-transform duration-300 group-hover:scale-[1.02]"
                   width={400}
                   height={400}
@@ -88,7 +91,7 @@ const Awareness: React.FC = () => {
                 <div className="absolute inset-0 bg-black rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <Image
                   src="/jesse-kriel.jpg"
-                  alt="Jesse Kriel"
+                  alt="Jesse Kriel, professional rugby player and satisfied dental patient of Dr. Devin Chetty"
                   className="rounded-lg shadow-lg transform transition-transform duration-300 group-hover:scale-[1.02]"
                   width={400}
                   height={400}

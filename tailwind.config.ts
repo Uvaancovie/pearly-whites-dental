@@ -8,6 +8,12 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
+  			'dental-blue': '#2563eb',
+  			'dental-cyan': '#06b6d4',
+  			'dental-green': '#10b981',
+  			'dental-navy': '#1e293b',
+  			'dental-light': '#f8fafc',
+  			'dental-accent': '#0ea5e9',
   			'light-grey': '#f4f4f4',
   			'dark-black': '#0a0a0a',
   			'accent-purple': '#7c3aed',

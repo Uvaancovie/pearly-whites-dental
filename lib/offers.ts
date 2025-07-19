@@ -63,12 +63,49 @@ export async function getOffers(): Promise<Offer[]> {
       isPopular: false,
       month: "May",
     },
+
+    // — School Holiday Special 1 —
+    {
+      id: "school-holiday-special-1",
+      title: "School Holiday Special",
+      description: "Full check-up, cleaning and X-rays for the whole family",
+      price: "Kids - R650",
+      originalPrice: "",
+      discount: "",
+      validUntil: "End of School Holidays",
+      image: "/school-holiday.jpeg",
+      category: "family",
+      isPopular: true,
+      month: "July",
+      additionalInfo: "Parents - R850 | Cash Only | 065 554 1518",
+    },
+
+    // — School Holiday Special 2 —
+    {
+      id: "school-holiday-special-2",
+      title: "School Holiday Special",
+      description: "Kids - Full check up and cleaning",
+      price: "R650",
+      originalPrice: "",
+      discount: "",
+      validUntil: "School Holidays",
+      image: "/school-holiday-2.jpeg",
+      category: "family",
+      isPopular: true,
+      month: "July",
+      additionalInfo: "Parents - R850 | Call us 0861 555 111",
+    },
   ];
 }
 
 export async function getOffersByMonth(month: string): Promise<Offer[]> {
   const all = await getOffers();
   return all.filter((o) => o.month?.toLowerCase() === month.toLowerCase());
+}
+
+export async function getSchoolHolidayOffers(): Promise<Offer[]> {
+  const all = await getOffers();
+  return all.filter((o) => o.month?.toLowerCase() === "july" && o.category === "family");
 }
 
 export async function getPopularOffers(limit = 3): Promise<Offer[]> {

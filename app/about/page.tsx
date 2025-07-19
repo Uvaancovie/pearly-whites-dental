@@ -1,5 +1,24 @@
 import React from "react";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Dr. Devin Chetty | Celebrity Dentist | 10+ Years Experience",
+  description: "Meet Dr. Devin Chetty, award-winning celebrity dentist with 10+ years experience. Trusted by 100+ celebrities for cosmetic dentistry, implants & smile transformations in Umhlanga.",
+  keywords: "dr devin chetty dentist, celebrity dentist biography, cosmetic dentist experience, dental qualifications umhlanga, professional dentist durban",
+  openGraph: {
+    title: "About Dr. Devin Chetty | Celebrity Dentist",
+    description: "Meet Dr. Devin Chetty, award-winning celebrity dentist with 10+ years experience in cosmetic dentistry.",
+    images: [
+      {
+        url: "/header.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Devin Chetty - About the Celebrity Dentist",
+      },
+    ],
+  },
+};
 
 const About = () => {
   return (

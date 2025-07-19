@@ -10,5 +10,6 @@ export interface Offer {
     category?: string
     isPopular?: boolean
     month?: string
+    additionalInfo?: string
   }
   

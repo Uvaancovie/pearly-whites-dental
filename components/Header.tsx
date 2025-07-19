@@ -6,12 +6,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Calendar, Star, Instagram } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
-import { getOffersByMonth } from "@/lib/offers";
+import { getOffersByMonth, getSchoolHolidayOffers } from "@/lib/offers";
 import type { Offer } from "@/types/offers";
 
 export default function Header() {
   const instagramRef = useRef<HTMLDivElement>(null);
   const [mayOffers, setMayOffers] = useState<Offer[]>([]);
+  const [schoolHolidayOffers, setSchoolHolidayOffers] = useState<Offer[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Load Instagram embed script
@@ -28,12 +29,16 @@ export default function Header() {
     }
   }, []);
 
-  // Fetch May offers
+  // Fetch offers
   useEffect(() => {
     async function loadOffers() {
       try {
-        const offers = await getOffersByMonth("May");
-        setMayOffers(offers);
+        const [mayOffers, holidayOffers] = await Promise.all([
+          getOffersByMonth("May"),
+          getSchoolHolidayOffers()
+        ]);
+        setMayOffers(mayOffers);
+        setSchoolHolidayOffers(holidayOffers);
       } catch (error) {
         console.error("Failed to load offers:", error);
       } finally {
@@ -68,16 +73,26 @@ export default function Header() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-              Pearly Whites Dental May Special
+              Pearly Whites Dental School Holiday Specials
             </h1>
 
             <p className="text-lg text-gray-700">
               Experience painless, state-of-the-art dental care with our award-winning team.
-              We are committed to giving you the confident smile you deserve.
+              Perfect time for the family during school holidays!
             </p>
 
-            {/* May Offers Carousel */}
-            {!loading && mayOffers.length > 0 && (
+            {/* School Holiday Offers Carousel */}
+            {!loading && schoolHolidayOffers.length > 0 && (
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg border border-gray-100 shadow-md p-4">
+                <h3 className="font-semibold text-primary mb-3">
+                  🎉 School Holiday Specials
+                </h3>
+                <OffersCarousel offers={schoolHolidayOffers} />
+              </div>
+            )}
+
+            {/* May Offers Carousel - Fallback */}
+            {!loading && schoolHolidayOffers.length === 0 && mayOffers.length > 0 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-lg border border-gray-100 shadow-md p-4">
                 <h3 className="font-semibold text-primary mb-3">
                   May Special Offers
@@ -88,7 +103,7 @@ export default function Header() {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/offers" passHref>
+              <Link href="/contact" passHref>
                 <Button size="lg" className="gap-2 text-base font-medium">
                   <Calendar className="h-5 w-5" />
                   Book Appointment

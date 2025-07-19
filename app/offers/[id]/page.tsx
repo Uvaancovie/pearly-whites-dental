@@ -7,6 +7,34 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const offerData = {
+  "school-holiday-special-1": {
+    title: "School Holiday Special",
+    description: "Full check-up, cleaning and X-rays for the whole family. Perfect for school holidays!",
+    img: "/school-holiday.jpeg",
+    price: "Kids: R650 | Parents: R850",
+    details: [
+      "Full dental check-up for kids",
+      "Professional cleaning included",
+      "X-rays as needed",
+      "Parent packages available",
+      "Cash only payments",
+      "Call 065 554 1518 to book"
+    ],
+  },
+  "school-holiday-special-2": {
+    title: "School Holiday Family Deal", 
+    description: "Kids - Full check up and cleaning. Parents also welcome with special rates!",
+    img: "/school-holiday-2.jpeg",
+    price: "Kids: R650 | Parents: R850",
+    details: [
+      "Complete kids dental check-up",
+      "Professional cleaning",
+      "Family-friendly environment", 
+      "Special parent rates available",
+      "Appointments available for booking",
+      "Call 0861 555 111 to book"
+    ],
+  },
   "zoom-whitening": {
     title: "Zoom Whitening",
     description:

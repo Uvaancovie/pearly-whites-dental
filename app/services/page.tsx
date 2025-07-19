@@ -1,5 +1,24 @@
 import React from "react";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dental Services Umhlanga | Cosmetic Dentistry | Implants | Whitening",
+  description: "Comprehensive dental services in Umhlanga: cosmetic dentistry, dental implants, teeth whitening, veneers, crowns & dentures. Celebrity dentist Dr. Devin Chetty.",
+  keywords: "dental services umhlanga, cosmetic dentistry durban, dental implants umhlanga, teeth whitening durban, veneers umhlanga, dental crowns, dentures durban",
+  openGraph: {
+    title: "Dental Services Umhlanga | Cosmetic Dentistry & Implants",
+    description: "Comprehensive dental services in Umhlanga including cosmetic dentistry, implants, and teeth whitening by celebrity dentist Dr. Devin Chetty.",
+    images: [
+      {
+        url: "/dental-implants.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dental Services at Pearly Whites Dental Studio",
+      },
+    ],
+  },
+};
 
 const Services = () => {
   return (
