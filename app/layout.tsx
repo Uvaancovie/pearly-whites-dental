@@ -112,8 +112,29 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://pearlywhitesdental.co.za" />
-        <link rel="icon" href="/favicon.ico" />
+        
+        {/* Favicon - Multiple formats for better browser support */}
+        <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/logo.jpg" />
+        
+        {/* Apple Touch Icons */}
         <link rel="apple-touch-icon" href="/logo.jpg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.jpg" />
+        
+        {/* Android Chrome Icons */}
+        <link rel="icon" type="image/jpeg" sizes="192x192" href="/logo.jpg" />
+        <link rel="icon" type="image/jpeg" sizes="512x512" href="/logo.jpg" />
+        
+        {/* Microsoft Tiles */}
+        <meta name="msapplication-TileImage" content="/logo.jpg" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        
+        {/* Theme Color for mobile browsers */}
+        <meta name="theme-color" content="#ffffff" />
+        
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

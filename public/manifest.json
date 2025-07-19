@@ -1,0 +1,28 @@
+{
+  "name": "Pearly Whites Dental Studio",
+  "short_name": "Pearly Whites",
+  "description": "Award-winning celebrity dentist Dr. Devin Chetty offers premium dental services in Umhlanga",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.jpg", 
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "health", "lifestyle"],
+  "lang": "en-ZA",
+  "scope": "/",
+  "prefer_related_applications": false
+}
