@@ -126,7 +126,7 @@ const BeforeAfter = () => {
               >
                 <div className="flex items-center justify-center mb-2">
                   <Users className="h-6 w-6 text-blue-600 mr-2" />
-                  <span className="text-3xl font-bold text-gray-900">5,000+</span>
+                  <span className="text-3xl font-bold text-gray-900">500+</span>
                 </div>
                 <p className="text-gray-600">Successful Transformations</p>
               </motion.div>
