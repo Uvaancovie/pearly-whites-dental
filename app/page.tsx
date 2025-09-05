@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Awareness from "../components/Awareness";
 import BeforeAfterSection from "../components/BeforeAfterSection";
 import Services from "../components/Services";
+import BlogSection from "../components/BlogSection";
 import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
 import { Metadata } from "next";
@@ -39,6 +40,9 @@ const Home = () => {
 
       {/* Services */}
       <Services />
+      
+      {/* Blog Section */}
+      <BlogSection />
       
       {/* Testimonials */}
       <Testimonials />

@@ -60,6 +60,13 @@ const Navbar: FC = () => {
                   Before & After
                 </Link>
                 <Link
+                  href="/blog"
+                  className="flex w-full items-center py-3 px-4 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  prefetch={false}
+                >
+                  Blog
+                </Link>
+                <Link
                   href="/offers"
                   className="flex w-full items-center py-3 px-4 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-colors"
                   prefetch={false}
@@ -117,6 +124,13 @@ const Navbar: FC = () => {
               prefetch={false}
             >
               Before & After
+            </Link>
+            <Link
+              href="/blog"
+              className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none"
+              prefetch={false}
+            >
+              Blog
             </Link>
             <Link
               href="/offers"
